@@ -1,6 +1,8 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: poifuture/www.poifuture.com
   branch: master
+  site_domain: poifuture.netlify.com
 
 media_folder: static/img
 public_folder: /img

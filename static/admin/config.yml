@@ -1,8 +1,9 @@
 backend:
-  name: github
-  repo: poifuture/www.poifuture.com
-  branch: master
-  site_domain: poifuture.netlify.com
+  # name: github
+  # repo: poifuture/www.poifuture.com
+  # branch: master
+  # site_domain: poifuture.netlify.com
+  name: test-repo
 
 media_folder: static/img
 public_folder: /img

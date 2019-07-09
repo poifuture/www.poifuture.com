@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: poifuture/www.poifuture.com
-  branch: master
+  branch: cms # Restrict push to master
   site_domain: poifuture.netlify.com
 
 media_folder: static/img

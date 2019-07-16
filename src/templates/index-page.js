@@ -7,7 +7,7 @@ import "react-resizable/css/styles.css"
 import Layout from "../components/Layout"
 import Features from "../components/Features"
 import BlogRoll from "../components/BlogRoll"
-import { MuuriGrid, MuuriItem } from "../components/MuuriGrid"
+import { FlipGrid, FlipItem } from "../components/FlipGrid"
 
 export const IndexPageTemplate = ({
   image,
@@ -330,520 +330,160 @@ export const IndexPageTemplate = ({
         <h3>Products</h3>
       </div>
       {/* <!-- end titles --> */}
-      <MuuriGrid filters={["Retail", "Education", "Productivity"]}>
-        <MuuriItem muuri-filter="Retail">
-          <div className="coddle__box">
-            <figure className="coddle__box__figure">
-              <div
-                className="reveal-effect se2-white wow"
-                data-aos="slide-effect"
-              >
-                <img
-                  className="coddle__box__image"
-                  src="images/isolayer1.jpg"
-                  alt=""
-                />
-              </div>
-              <div className="coddle__box__deco coddle__box__deco--shine">
-                <div></div>
-              </div>
-              <figcaption className="coddle__box__caption">
-                <h4 className="coddle__box__title">
-                  <a href="images/isolayer1.jpg" data-fancybox>
-                    IPHONE X
-                  </a>
-                </h4>
-                <p className="coddle__box__description">
-                  DIGITAL CREATION UI-UX
-                </p>
-              </figcaption>
-            </figure>
-          </div>
-          {/* <!--end coddle__box --> */}
-        </MuuriItem>
-        <MuuriItem muuri-filter="Education">
-          <div className="coddle__box">
-            <figure className="coddle__box__figure">
-              <div
-                className="reveal-effect se2-white wow"
-                data-aos="slide-effect"
-              >
-                <img
-                  className="coddle__box__image"
-                  src="images/isolayer2.jpg"
-                  alt=""
-                />
-              </div>
-              <div className="coddle__box__deco coddle__box__deco--shine">
-                <div></div>
-              </div>
-              <figcaption className="coddle__box__caption">
-                <h4 className="coddle__box__title">
-                  <a href="images/isolayer2.jpg" data-fancybox>
-                    MOON WATCH
-                  </a>
-                </h4>
-                <p className="coddle__box__description">
-                  DIGITAL CREATION UI-UX
-                </p>
-              </figcaption>
-            </figure>
-          </div>
-          {/* <!--end coddle__box -->  */}
-        </MuuriItem>
-        <MuuriItem muuri-filter="Productivity">
-          <div className="coddle__box">
-            <figure className="coddle__box__figure">
-              <div
-                className="reveal-effect se2-white wow"
-                data-aos="slide-effect"
-              >
-                <img
-                  className="coddle__box__image"
-                  src="images/isolayer3.jpg"
-                  alt=""
-                />
-              </div>
-              <div className="coddle__box__deco coddle__box__deco--shine">
-                <div></div>
-              </div>
-              <figcaption className="coddle__box__caption">
-                <h4 className="coddle__box__title">
-                  <a href="images/isolayer3.jpg" data-fancybox>
-                    THE DESIGN VALUE
-                  </a>
-                </h4>
-                <p className="coddle__box__description">
-                  DIGITAL CREATION UI-UX
-                </p>
-              </figcaption>
-            </figure>
-          </div>
-          {/* <!--end coddle__box -->  */}
-        </MuuriItem>
-        <MuuriItem muuri-filter="Productivity">
-          <div className="coddle__box">
-            <figure className="coddle__box__figure">
-              <div
-                className="reveal-effect se2-white wow"
-                data-aos="slide-effect"
-              >
-                <img
-                  className="coddle__box__image"
-                  src="images/isolayer4.jpg"
-                  alt=""
-                />
-              </div>
-              <div className="coddle__box__deco coddle__box__deco--shine">
-                <div></div>
-              </div>
-              <figcaption className="coddle__box__caption">
-                <h4 className="coddle__box__title">
-                  <a href="images/isolayer4.jpg" data-fancybox>
-                    MISSING PUZZLE
-                  </a>
-                </h4>
-                <p className="coddle__box__description">
-                  DIGITAL CREATION UI-UX
-                </p>
-              </figcaption>
-            </figure>
-          </div>
-          {/* <!--end coddle__box -->  */}
-        </MuuriItem>
-        <MuuriItem muuri-filter="Productivity">
-          <div className="coddle__box">
-            <figure className="coddle__box__figure">
-              <div
-                className="reveal-effect se2-white wow"
-                data-aos="slide-effect"
-              >
-                <img
-                  className="coddle__box__image"
-                  src="images/isolayer5.jpg"
-                  alt=""
-                />
-              </div>
-              <div className="coddle__box__deco coddle__box__deco--shine">
-                <div></div>
-              </div>
-              <figcaption className="coddle__box__caption">
-                <h4 className="coddle__box__title">
-                  <a href="images/isolayer5.jpg" data-fancybox>
-                    NEXT BEAT
-                  </a>
-                </h4>
-                <p className="coddle__box__description">
-                  DIGITAL CREATION UI-UX
-                </p>
-              </figcaption>
-            </figure>
-          </div>
-          {/* <!--end coddle__box -->  */}
-        </MuuriItem>
-        <MuuriItem muuri-filter="Productivity">
-          <div className="coddle__box">
-            <figure className="coddle__box__figure">
-              <div
-                className="reveal-effect se2-white wow"
-                data-aos="slide-effect"
-              >
-                <img
-                  className="coddle__box__image"
-                  src="images/isolayer6.jpg"
-                  alt=""
-                />
-              </div>
-              <div className="coddle__box__deco coddle__box__deco--shine">
-                <div></div>
-              </div>
-              <figcaption className="coddle__box__caption">
-                <h4 className="coddle__box__title">
-                  <a href="images/isolayer6.jpg" data-fancybox>
-                    2 CARDS
-                  </a>
-                </h4>
-                <p className="coddle__box__description">
-                  DIGITAL CREATION UI-UX
-                </p>
-              </figcaption>
-            </figure>
-          </div>
-          {/* <!--end coddle__box -->  */}
-        </MuuriItem>
-        <MuuriItem muuri-filter="Productivity">
-          <div className="coddle__box">
-            <figure className="coddle__box__figure">
-              <div
-                className="reveal-effect se2-white wow"
-                data-aos="slide-effect"
-              >
-                <img
-                  className="coddle__box__image"
-                  src="images/isolayer7.jpg"
-                  alt=""
-                />
-              </div>
-              <div className="coddle__box__deco coddle__box__deco--shine">
-                <div></div>
-              </div>
-              <figcaption className="coddle__box__caption">
-                <h4 className="coddle__box__title">
-                  <a href="images/isolayer7.jpg" data-fancybox>
-                    REVIEW
-                  </a>
-                </h4>
-                <p className="coddle__box__description">
-                  DIGITAL CREATION UI-UX
-                </p>
-              </figcaption>
-            </figure>
-          </div>
-          {/* <!--end coddle__box -->  */}
-        </MuuriItem>
-        <MuuriItem muuri-filter="Productivity">
-          <div className="coddle__box">
-            <figure className="coddle__box__figure">
-              <div
-                className="reveal-effect se2-white wow"
-                data-aos="slide-effect"
-              >
-                <img
-                  className="coddle__box__image"
-                  src="images/isolayer8.jpg"
-                  alt=""
-                />
-              </div>
-              <div className="coddle__box__deco coddle__box__deco--shine">
-                <div></div>
-              </div>
-              <figcaption className="coddle__box__caption">
-                <h4 className="coddle__box__title">
-                  <a href="images/isolayer9.jpg" data-fancybox>
-                    HERDIUS
-                  </a>
-                </h4>
-                <p className="coddle__box__description">
-                  DIGITAL CREATION UI-UX
-                </p>
-              </figcaption>
-            </figure>
-          </div>
-          {/* <!--end coddle__box --> */}
-        </MuuriItem>
-      </MuuriGrid>
+      <FlipGrid
+        filters={["Retail", "Education", "Productivity"]}
+        items={[
+          <FlipItem filterKey="Retail">
+            <div className="coddle__box">
+              <figure className="coddle__box__figure">
+                <div
+                  className="reveal-effect se2-white wow"
+                  data-aos="slide-effect"
+                >
+                  <img
+                    className="coddle__box__image"
+                    src="images/isolayer1.jpg"
+                    alt=""
+                  />
+                </div>
+                <div className="coddle__box__deco coddle__box__deco--shine">
+                  <div></div>
+                </div>
+                <figcaption className="coddle__box__caption">
+                  <h4 className="coddle__box__title">
+                    <a href="images/isolayer1.jpg" data-fancybox>
+                      [WIP] Aincrad
+                    </a>
+                  </h4>
+                  <p className="coddle__box__description">
+                    The immersive shopping mall
+                  </p>
+                </figcaption>
+              </figure>
+            </div>
+            {/* <!--end coddle__box --> */}
+          </FlipItem>,
+          <FlipItem filterKey="Retail">
+            <div className="coddle__box">
+              <figure className="coddle__box__figure">
+                <div
+                  className="reveal-effect se2-white wow"
+                  data-aos="slide-effect"
+                >
+                  <img
+                    className="coddle__box__image"
+                    src="images/isolayer2.jpg"
+                    alt=""
+                  />
+                </div>
+                <div className="coddle__box__deco coddle__box__deco--shine">
+                  <div></div>
+                </div>
+                <figcaption className="coddle__box__caption">
+                  <h4 className="coddle__box__title">
+                    <a href="images/isolayer2.jpg" data-fancybox>
+                      [WIP] Lambent
+                    </a>
+                  </h4>
+                  <p className="coddle__box__description">
+                    The immersive fitting room
+                  </p>
+                </figcaption>
+              </figure>
+            </div>
+            {/* <!--end coddle__box -->  */}
+          </FlipItem>,
+          <FlipItem filterKey="Education">
+            <div className="coddle__box">
+              <figure className="coddle__box__figure">
+                <div
+                  className="reveal-effect se2-white wow"
+                  data-aos="slide-effect"
+                >
+                  <img
+                    className="coddle__box__image"
+                    src="images/isolayer3.jpg"
+                    alt=""
+                  />
+                </div>
+                <div className="coddle__box__deco coddle__box__deco--shine">
+                  <div></div>
+                </div>
+                <figcaption className="coddle__box__caption">
+                  <h4 className="coddle__box__title">
+                    <a href="images/isolayer3.jpg" data-fancybox>
+                      [WIP] Goi
+                    </a>
+                  </h4>
+                  <p className="coddle__box__description">
+                    Recite words easily
+                  </p>
+                </figcaption>
+              </figure>
+            </div>
+            {/* <!--end coddle__box -->  */}
+          </FlipItem>,
+          <FlipItem filterKey="Productivity">
+            <div className="coddle__box">
+              <figure className="coddle__box__figure">
+                <div
+                  className="reveal-effect se2-white wow"
+                  data-aos="slide-effect"
+                >
+                  <img
+                    className="coddle__box__image"
+                    src="images/isolayer4.jpg"
+                    alt=""
+                  />
+                </div>
+                <div className="coddle__box__deco coddle__box__deco--shine">
+                  <div></div>
+                </div>
+                <figcaption className="coddle__box__caption">
+                  <h4 className="coddle__box__title">
+                    <a href="images/isolayer4.jpg" data-fancybox>
+                      Markdown Styler
+                    </a>
+                  </h4>
+                  <p className="coddle__box__description">
+                    Style your markdown doc
+                  </p>
+                </figcaption>
+              </figure>
+            </div>
+            {/* <!--end coddle__box -->  */}
+          </FlipItem>,
+          <FlipItem filterKey="Productivity">
+            <div className="coddle__box">
+              <figure className="coddle__box__figure">
+                <div
+                  className="reveal-effect se2-white wow"
+                  data-aos="slide-effect"
+                >
+                  <img
+                    className="coddle__box__image"
+                    src="images/isolayer5.jpg"
+                    alt=""
+                  />
+                </div>
+                <div className="coddle__box__deco coddle__box__deco--shine">
+                  <div></div>
+                </div>
+                <figcaption className="coddle__box__caption">
+                  <h4 className="coddle__box__title">
+                    <a href="images/isolayer5.jpg" data-fancybox>
+                      GoLink
+                    </a>
+                  </h4>
+                  <p className="coddle__box__description">Recall docs easily</p>
+                </figcaption>
+              </figure>
+            </div>
+            {/* <!--end coddle__box -->  */}
+          </FlipItem>,
+        ]}
+      />
     </section>
-
-    <section className="recent-works">
-      <div className="titles">
-        <span className="title-bg"></span>
-        <h3>Products</h3>
-      </div>
-      {/* <!-- end titles --> */}
-      <ul className="works-filter">
-        <li>
-          {/* eslint-disable-next-line */}
-          <a data-filter="*" className="current">
-            All
-          </a>
-        </li>
-        <li>
-          {/* eslint-disable-next-line */}
-          <a data-filter=".webuiux">Retail</a>
-        </li>
-        <li>
-          {/* eslint-disable-next-line */}
-          <a data-filter=".mobileapps">Education</a>
-        </li>
-        <li>
-          {/* eslint-disable-next-line */}
-          <a data-filter=".development">Productivity</a>
-        </li>
-      </ul>
-      <ul className="works-grid">
-        <li className="webuiux">
-          <div className="coddle__box">
-            <figure className="coddle__box__figure">
-              <div
-                className="reveal-effect se2-white wow"
-                data-aos="slide-effect"
-              >
-                <img
-                  className="coddle__box__image"
-                  src="images/isolayer1.jpg"
-                  alt=""
-                />
-              </div>
-              <div className="coddle__box__deco coddle__box__deco--shine">
-                <div></div>
-              </div>
-              <figcaption className="coddle__box__caption">
-                <h4 className="coddle__box__title">
-                  <a href="images/isolayer1.jpg" data-fancybox>
-                    IPHONE X
-                  </a>
-                </h4>
-                <p className="coddle__box__description">
-                  DIGITAL CREATION UI-UX
-                </p>
-              </figcaption>
-            </figure>
-          </div>
-          {/* <!--end coddle__box --> */}
-        </li>
-        <li className="mobileapps">
-          <div className="coddle__box">
-            <figure className="coddle__box__figure">
-              <div
-                className="reveal-effect se2-white wow"
-                data-aos="slide-effect"
-              >
-                <img
-                  className="coddle__box__image"
-                  src="images/isolayer2.jpg"
-                  alt=""
-                />
-              </div>
-              <div className="coddle__box__deco coddle__box__deco--shine">
-                <div></div>
-              </div>
-              <figcaption className="coddle__box__caption">
-                <h4 className="coddle__box__title">
-                  <a href="images/isolayer2.jpg" data-fancybox>
-                    MOON WATCH
-                  </a>
-                </h4>
-                <p className="coddle__box__description">
-                  DIGITAL CREATION UI-UX
-                </p>
-              </figcaption>
-            </figure>
-          </div>
-          {/* <!--end coddle__box -->  */}
-        </li>
-        <li className="development">
-          <div className="coddle__box">
-            <figure className="coddle__box__figure">
-              <div
-                className="reveal-effect se2-white wow"
-                data-aos="slide-effect"
-              >
-                <img
-                  className="coddle__box__image"
-                  src="images/isolayer3.jpg"
-                  alt=""
-                />
-              </div>
-              <div className="coddle__box__deco coddle__box__deco--shine">
-                <div></div>
-              </div>
-              <figcaption className="coddle__box__caption">
-                <h4 className="coddle__box__title">
-                  <a href="images/isolayer3.jpg" data-fancybox>
-                    THE DESIGN VALUE
-                  </a>
-                </h4>
-                <p className="coddle__box__description">
-                  DIGITAL CREATION UI-UX
-                </p>
-              </figcaption>
-            </figure>
-          </div>
-          {/* <!--end coddle__box -->  */}
-        </li>
-        <li>
-          <div className="coddle__box">
-            <figure className="coddle__box__figure">
-              <div
-                className="reveal-effect se2-white wow"
-                data-aos="slide-effect"
-              >
-                <img
-                  className="coddle__box__image"
-                  src="images/isolayer4.jpg"
-                  alt=""
-                />
-              </div>
-              <div className="coddle__box__deco coddle__box__deco--shine">
-                <div></div>
-              </div>
-              <figcaption className="coddle__box__caption">
-                <h4 className="coddle__box__title">
-                  <a href="images/isolayer4.jpg" data-fancybox>
-                    MISSING PUZZLE
-                  </a>
-                </h4>
-                <p className="coddle__box__description">
-                  DIGITAL CREATION UI-UX
-                </p>
-              </figcaption>
-            </figure>
-          </div>
-          {/* <!--end coddle__box -->  */}
-        </li>
-        <li>
-          <div className="coddle__box">
-            <figure className="coddle__box__figure">
-              <div
-                className="reveal-effect se2-white wow"
-                data-aos="slide-effect"
-              >
-                <img
-                  className="coddle__box__image"
-                  src="images/isolayer5.jpg"
-                  alt=""
-                />
-              </div>
-              <div className="coddle__box__deco coddle__box__deco--shine">
-                <div></div>
-              </div>
-              <figcaption className="coddle__box__caption">
-                <h4 className="coddle__box__title">
-                  <a href="images/isolayer5.jpg" data-fancybox>
-                    NEXT BEAT
-                  </a>
-                </h4>
-                <p className="coddle__box__description">
-                  DIGITAL CREATION UI-UX
-                </p>
-              </figcaption>
-            </figure>
-          </div>
-          {/* <!--end coddle__box -->  */}
-        </li>
-        <li>
-          <div className="coddle__box">
-            <figure className="coddle__box__figure">
-              <div
-                className="reveal-effect se2-white wow"
-                data-aos="slide-effect"
-              >
-                <img
-                  className="coddle__box__image"
-                  src="images/isolayer6.jpg"
-                  alt=""
-                />
-              </div>
-              <div className="coddle__box__deco coddle__box__deco--shine">
-                <div></div>
-              </div>
-              <figcaption className="coddle__box__caption">
-                <h4 className="coddle__box__title">
-                  <a href="images/isolayer6.jpg" data-fancybox>
-                    2 CARDS
-                  </a>
-                </h4>
-                <p className="coddle__box__description">
-                  DIGITAL CREATION UI-UX
-                </p>
-              </figcaption>
-            </figure>
-          </div>
-          {/* <!--end coddle__box -->  */}
-        </li>
-        <li>
-          <div className="coddle__box">
-            <figure className="coddle__box__figure">
-              <div
-                className="reveal-effect se2-white wow"
-                data-aos="slide-effect"
-              >
-                <img
-                  className="coddle__box__image"
-                  src="images/isolayer7.jpg"
-                  alt=""
-                />
-              </div>
-              <div className="coddle__box__deco coddle__box__deco--shine">
-                <div></div>
-              </div>
-              <figcaption className="coddle__box__caption">
-                <h4 className="coddle__box__title">
-                  <a href="images/isolayer7.jpg" data-fancybox>
-                    REVIEW
-                  </a>
-                </h4>
-                <p className="coddle__box__description">
-                  DIGITAL CREATION UI-UX
-                </p>
-              </figcaption>
-            </figure>
-          </div>
-          {/* <!--end coddle__box -->  */}
-        </li>
-        <li>
-          <div className="coddle__box">
-            <figure className="coddle__box__figure">
-              <div
-                className="reveal-effect se2-white wow"
-                data-aos="slide-effect"
-              >
-                <img
-                  className="coddle__box__image"
-                  src="images/isolayer8.jpg"
-                  alt=""
-                />
-              </div>
-              <div className="coddle__box__deco coddle__box__deco--shine">
-                <div></div>
-              </div>
-              <figcaption className="coddle__box__caption">
-                <h4 className="coddle__box__title">
-                  <a href="images/isolayer9.jpg" data-fancybox>
-                    HERDIUS
-                  </a>
-                </h4>
-                <p className="coddle__box__description">
-                  DIGITAL CREATION UI-UX
-                </p>
-              </figcaption>
-            </figure>
-          </div>
-          {/* <!--end coddle__box --> */}
-        </li>
-      </ul>
-    </section>
-    {/* <!-- end recent-works --> */}
 
     <section className="clients">
       <div className="container">

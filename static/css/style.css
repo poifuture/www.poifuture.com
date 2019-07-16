@@ -1263,17 +1263,14 @@ button[type="submit"] {
   width: 100%;
   float: left;
   margin: 0;
-  padding: 0;
+  padding: 0 auto 0 auto;
 }
 .recent-works .works-grid li {
-  width: 25%;
+  width: 23%;
   float: left;
-  margin: 0;
+  margin: 1%;
   padding: 0;
   list-style: none;
-}
-.recent-works .muuri .muuri-item {
-  width: 25%;
 }
 
 /* ALL WORKS */
@@ -1961,10 +1958,7 @@ button[type="submit"] {
     margin-bottom: 30px;
   }
   .recent-works .works-grid li {
-    width: 50%;
-  }
-  .recent-works .muuri .muuri-item {
-    width: 50%;
+    width: 48%;
   }
   .clients ul li {
     width: 33.33333%;
@@ -2043,10 +2037,9 @@ button[type="submit"] {
     margin-bottom: 30px;
   }
   .recent-works .works-grid li {
-    width: 100%;
-  }
-  .recent-works .muuri .muuri-item {
-    width: 100%;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
   }
   .recent-news .news-box figure {
     width: 100%;

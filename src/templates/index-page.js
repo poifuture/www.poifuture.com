@@ -48,6 +48,7 @@ export const IndexPageTemplate = ({
         </div>
         {/* <!-- end titles --> */}
         <p>{mainpitch.description}</p>
+        {/* eslint-disable-next-line */}
         <a className="ghost-btn">
           <svg>
             <defs>
@@ -191,24 +192,28 @@ export const IndexPageTemplate = ({
               </p>
               <ul>
                 <li>
+                  {/* eslint-disable-next-line */}
                   <a>
                     <img src="images/icon-check.svg" alt="" />
                     Web Design
                   </a>
                 </li>
                 <li>
+                  {/* eslint-disable-next-line */}
                   <a>
                     <img src="images/icon-check.svg" alt="" />
                     Development
                   </a>
                 </li>
                 <li>
+                  {/* eslint-disable-next-line */}
                   <a>
                     <img src="images/icon-check.svg" alt="" />
                     User Experience
                   </a>
                 </li>
                 <li>
+                  {/* eslint-disable-next-line */}
                   <a>
                     <img src="images/icon-check.svg" alt="" />
                     Digital Ads
@@ -325,24 +330,22 @@ export const IndexPageTemplate = ({
       {/* <!-- end titles --> */}
       <ul className="works-filter">
         <li>
-          <a href="#" data-filter="*" className="current">
+          {/* eslint-disable-next-line */}
+          <a data-filter="*" className="current">
             All
           </a>
         </li>
         <li>
-          <a href="#" data-filter=".webuiux">
-            Retail
-          </a>
+          {/* eslint-disable-next-line */}
+          <a data-filter=".webuiux">Retail</a>
         </li>
         <li>
-          <a href="#" data-filter=".mobileapps">
-            Education
-          </a>
+          {/* eslint-disable-next-line */}
+          <a data-filter=".mobileapps">Education</a>
         </li>
         <li>
-          <a href="#" data-filter=".development">
-            Productivity
-          </a>
+          {/* eslint-disable-next-line */}
+          <a data-filter=".development">Productivity</a>
         </li>
       </ul>
       <ul className="works-grid">

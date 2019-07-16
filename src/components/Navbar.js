@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import github from "../img/github-icon.svg"
 import logo from "../img/logo.svg"
+import SnowParticles from "./SnowParticles"
 
 const Navbar = class extends React.Component {
   constructor(props) {
@@ -40,14 +41,16 @@ const Navbar = class extends React.Component {
           <div className="menu">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <a href="/" className="nav-link transition">
-                  Home
-                </a>
+                <Link href="/" className="nav-link transition">
+                  HOME
+                </Link>
               </li>
               <li className="nav-item">
+                {/* eslint-disable-next-line */}
                 <a className="nav-link">RETAIL</a>
                 <ul>
                   <li>
+                    {/* eslint-disable-next-line */}
                     <a>
                       <span style={{ textDecoration: "line-through" }}>
                         AINCRAD
@@ -55,6 +58,7 @@ const Navbar = class extends React.Component {
                     </a>
                   </li>
                   <li>
+                    {/* eslint-disable-next-line */}
                     <a>
                       <span style={{ textDecoration: "line-through" }}>
                         LAMBENT
@@ -64,6 +68,7 @@ const Navbar = class extends React.Component {
                 </ul>
               </li>
               <li className="nav-item">
+                {/* eslint-disable-next-line */}
                 <a className="nav-link">EDUCATION</a>
                 <ul>
                   <li>
@@ -77,14 +82,15 @@ const Navbar = class extends React.Component {
                 </ul>
               </li>
               <li className="nav-item">
-                <a className="nav-link">Productivity</a>
+                {/* eslint-disable-next-line */}
+                <a className="nav-link">PRODUCTIVITY</a>
                 <ul>
                   <li>
                     <a
                       href="https://github.com/poifuture/markdown-styler-for-word"
                       className="transition"
                     >
-                      Markdown Styler
+                      MARKDOWN STYLER
                     </a>
                   </li>
                   <li style={{ display: "none" }}>
@@ -122,15 +128,15 @@ const Navbar = class extends React.Component {
             <div className="swiper-slider">
               <div className="swiper-wrapper">
                 <div className="swiper-slide">
-                  <img src="images/office01.jpg" alt="" />
+                  <img src="/images/office01.jpg" alt="" />
                 </div>
                 {/* <!-- end swiper-slide --> */}
                 <div className="swiper-slide">
-                  <img src="images/office02.jpg" alt="" />
+                  <img src="/images/office02.jpg" alt="" />
                 </div>
                 {/* <!-- end swiper-slide --> */}
                 <div className="swiper-slide">
-                  <img src="images/office03.jpg" alt="" />
+                  <img src="/images/office03.jpg" alt="" />
                 </div>
                 {/* <!-- end swiper-slide -->  */}
               </div>
@@ -171,7 +177,7 @@ const Navbar = class extends React.Component {
             <form>
               <input type="text" placeholder="Type here to make search" />
               <button type="submit">
-                <img src="images/search-icon.svg" alt="" />
+                <img src="/images/search-icon.svg" alt="" />
               </button>
             </form>
           </div>
@@ -180,18 +186,18 @@ const Navbar = class extends React.Component {
         {/* <!--end search-box --> */}
 
         <header className="header">
-          <div id="particles-bg"></div>
+          <SnowParticles className="particles-bg" />
           {/* <!-- end particles-bg --> */}
           <nav className="navbar">
             <div className="logo">
               <Link to="/" className="transition">
                 <img
-                  src="images/logo-round-100.png"
+                  src="/images/logo-round-100.png"
                   alt=""
                   className="logo-light"
                 />
                 <img
-                  src="images/logo-round-100.png"
+                  src="/images/logo-round-100.png"
                   alt=""
                   className="logo-colored"
                 />
@@ -211,14 +217,16 @@ const Navbar = class extends React.Component {
             </a>
             <ul className="navbar-nav">
               <li className="nav-item">
-                <a href="/" className="nav-link transition">
+                <Link to="/" className="nav-link transition">
                   HOME
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
+                {/* eslint-disable-next-line */}
                 <a className="nav-link">RETAIL</a>
                 <ul>
                   <li>
+                    {/* eslint-disable-next-line */}
                     <a>
                       <span style={{ textDecoration: "line-through" }}>
                         AINCRAD
@@ -226,6 +234,7 @@ const Navbar = class extends React.Component {
                     </a>
                   </li>
                   <li>
+                    {/* eslint-disable-next-line */}
                     <a>
                       <span style={{ textDecoration: "line-through" }}>
                         LAMBENT
@@ -235,6 +244,7 @@ const Navbar = class extends React.Component {
                 </ul>
               </li>
               <li className="nav-item">
+                {/* eslint-disable-next-line */}
                 <a className="nav-link">EDUCATION</a>
                 <ul>
                   <li>
@@ -248,6 +258,7 @@ const Navbar = class extends React.Component {
                 </ul>
               </li>
               <li className="nav-item">
+                {/* eslint-disable-next-line */}
                 <a className="nav-link">PRODUCTIVITY</a>
                 <ul>
                   <li>
@@ -294,6 +305,7 @@ const Navbar = class extends React.Component {
               <h2>{this.props.hero.title}</h2>
               <p>{this.props.hero.subtitle}</p>
               {this.props.hero.onClick && (
+                /* eslint-disable-next-line */
                 <a onClick={this.props.hero.onClick} className="ghost-btn">
                   <svg>
                     <defs>

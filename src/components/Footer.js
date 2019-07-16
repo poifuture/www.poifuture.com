@@ -15,31 +15,35 @@ const Footer = class extends React.Component {
             <div className="row">
               <div className="col-lg-3 col-md-6">
                 <figure>
-                  <img src="images/contact-icon01.png" alt="" />
+                  <img src="/images/contact-icon01.png" alt="" />
                 </figure>
                 <h4>E-MAILS</h4>
-                <address>info@coddle.com.br</address>
+                <address>contact@poifuture.com</address>
               </div>
               {/* <!-- end col-3 --> */}
               <div className="col-lg-3 col-md-6">
                 <figure>
-                  <img src="images/contact-icon02.png" alt="" />
+                  <img src="/images/contact-icon02.png" alt="" />
                 </figure>
                 <h4>PHONES</h4>
-                <address>+380 (98) 294 80 86</address>
+                <address>+1 TODO</address>
               </div>
               {/* <!-- end col-3 --> */}
               <div className="col-lg-3 col-md-6">
                 <figure>
-                  <img src="images/contact-icon03.png" alt="" />
+                  <img src="/images/contact-icon03.png" alt="" />
                 </figure>
-                <h4>SUPPORT</h4>
-                <address>Mon to Fri 09:00h to 18:00h</address>
+                <h4>WECHAT</h4>
+                <address>
+                  <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=Mzg5NDMwNDU2Ng==&scene=126&bizpsid=0&sharer_username=gh_e7cb01b2e430&subscene=0&clicktime=1562726334#wechat_redirect">
+                    poifuture
+                  </a>
+                </address>
               </div>
               {/* <!-- end col-3 --> */}
               <div className="col-lg-3 col-md-6">
                 <figure>
-                  <img src="images/contact-icon04.png" alt="" />
+                  <img src="/images/contact-icon04.png" alt="" />
                 </figure>
                 <h4 style={{ display: "none" }}>LOCATION</h4>
                 <address>
@@ -58,7 +62,7 @@ const Footer = class extends React.Component {
           <div className="container">
             <div className="row">
               <div className="col-12">
-                {/* <img src="images/logo-light.png" alt="Image" className="logo" /> */}
+                {/* <img src="/images/logo-light.png" alt="Image" className="logo" /> */}
                 <h1>poifuture</h1>
                 <p>
                   Poifuture products are continually improving everyone's

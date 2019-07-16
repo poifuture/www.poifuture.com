@@ -7,7 +7,8 @@ module.exports = {
   },
   plugins: [
     "gatsby-plugin-react-helmet",
-    `gatsby-plugin-typescript`,
+    "gatsby-plugin-typescript",
+    "gatsby-plugin-favicon",
     "gatsby-plugin-sass",
     {
       // keep as first gatsby-source-filesystem plugin for gatsby image support

@@ -36,7 +36,6 @@ exports.onInitialClientRender = () => {
   console.log("ReactDOM.render has executed")
   loadAllScripts()
     .then(() => {
-      window.dispatchEvent(new Event("resize"))
       document.getElementsByTagName("body")[0].className += " page-loaded"
       console.log("load all done")
     })

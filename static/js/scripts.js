@@ -1,4 +1,11 @@
 ;(function($) {
+  var getScrollTop = function() {
+    return Math.max(
+      window.pageYOffset,
+      document.documentElement.scrollTop,
+      document.body.scrollTop
+    )
+  }
   $(document).ready(function() {
     "use strict"
 
@@ -127,7 +134,7 @@
 
     // STICKY NAVBAR
     $(window).on("scroll touchmove", function(e) {
-      $(".navbar").toggleClass("stick-me", $(document).scrollTop() > 1)
+      $(".navbar").toggleClass("stick-me", getScrollTop() > 1)
     })
 
     // SWIPER SLIDER
@@ -171,62 +178,24 @@
       var goTo = this.getAttribute("href")
       setTimeout(function() {
         window.location = goTo
-      }, 1000)
-    })
-
-    // WORKS GRID
-    $(window).load(function(e) {
-      $(".works-grid").isotope({
-        itemSelector: ".works-grid li",
-        percentPosition: true,
-      })
-    })
-
-    // WORKS FILTER
-    $(window).load(function(e) {
-      var $container = $(".works-grid")
-      $container.isotope({
-        filter: "*",
-        animationOptions: {
-          duration: 750,
-          easing: "linear",
-          queue: false,
-        },
-      })
-
-      $(".works-filter a").click(function(e) {
-        $(".works-filter .current").removeClass("current")
-        $(this).addClass("current")
-
-        var selector = $(this).attr("data-filter")
-        $container.isotope({
-          filter: selector,
-          animationOptions: {
-            duration: 750,
-            easing: "linear",
-            queue: false,
-          },
-        })
-        return false
-      })
+      }, 500)
     })
   })
-
   // ODOMETER
-  $(window).scroll(function(e) {
-    $(".odometer").each(function(i) {
-      var bottom_of_object = $(this).offset().top + $(this).outerHeight()
-      var bottom_of_window = $(window).scrollTop() + $(window).height()
+  // $(window).scroll(function(e) {
+  //   $(".odometer").each(function(i) {
+  //     var bottom_of_object = $(this).offset().top + $(this).outerHeight()
+  //     var bottom_of_window = $(window).scrollTop() + $(window).height()
 
-      /* If the object is completely visible in the window, fade it in */
-      if (bottom_of_window > bottom_of_object) {
-        $("#1").html("11")
-        $("#2").html("870")
-        $("#3").html("252")
-        $("#4").html("99")
-      }
-    })
-  })
+  //     /* If the object is completely visible in the window, fade it in */
+  //     if (bottom_of_window > bottom_of_object) {
+  //       $("#1").html("11")
+  //       $("#2").html("870")
+  //       $("#3").html("252")
+  //       $("#4").html("99")
+  //     }
+  //   })
+  // })
 
   // WOW ANIMATION
   wow = new WOW({

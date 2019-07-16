@@ -1,12 +1,19 @@
 import * as React from "react"
 import ParticlesJs from "react-particles-js"
 
-export default class Particles extends React.Component {
-  componentDidMount() {}
+export default class Particles extends ParticlesJs {
   public render() {
-    return (
+    const InternalParticles = (
       <ParticlesJs
         {...this.props}
+        style={{
+          width: "100%",
+          height: "100%",
+          position: "absolute",
+          left: 0,
+          top: 0,
+          overflow: "hidden",
+        }}
         params={{
           particles: {
             number: {
@@ -118,5 +125,6 @@ export default class Particles extends React.Component {
         }}
       ></ParticlesJs>
     )
+    return InternalParticles
   }
 }

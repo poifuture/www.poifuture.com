@@ -8,7 +8,7 @@ import useSiteMetadata from "./SiteMetadata"
 const TemplateWrapper = ({ children, hero }) => {
   const { title, description } = useSiteMetadata()
   return (
-    <div>
+    <>
       <Helmet>
         {/* start Coddle Template */}
         <html lang="en" />
@@ -71,7 +71,7 @@ const TemplateWrapper = ({ children, hero }) => {
       <Footer />
       {/* <!-- JS FILES -->  */}
       {/* are located in the gastby browser */}
-    </div>
+    </>
   )
 }
 

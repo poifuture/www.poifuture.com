@@ -1272,6 +1272,9 @@ button[type="submit"] {
   padding: 0;
   list-style: none;
 }
+.recent-works .muuri .muuri-item {
+  width: 25%;
+}
 
 /* ALL WORKS */
 .all-works {
@@ -1960,6 +1963,9 @@ button[type="submit"] {
   .recent-works .works-grid li {
     width: 50%;
   }
+  .recent-works .muuri .muuri-item {
+    width: 50%;
+  }
   .clients ul li {
     width: 33.33333%;
   }
@@ -2037,6 +2043,9 @@ button[type="submit"] {
     margin-bottom: 30px;
   }
   .recent-works .works-grid li {
+    width: 100%;
+  }
+  .recent-works .muuri .muuri-item {
     width: 100%;
   }
   .recent-news .news-box figure {

@@ -10,6 +10,53 @@ const Navbar = class extends React.Component {
     this.state = {
       active: false,
       navBarActiveClass: "",
+      links: [
+        { display: "HOME", to: "/" },
+        {
+          display: "RETAIL",
+          to: [
+            {
+              display: "AINCRAD",
+              discription: "AR platform",
+              to: "#",
+              isEnabled: false,
+            },
+            {
+              display: "LAMBENT",
+              discription: "AR fitting room",
+              to: "#",
+              isEnabled: false,
+            },
+          ],
+        },
+        {
+          display: "EDUCATION",
+          to: [
+            {
+              display: "GOI",
+              discription: "Recite words",
+              to: "https://github.com/poifuture/poigoi",
+            },
+          ],
+        },
+        {
+          display: "PRODUCTIVITY",
+          to: [
+            {
+              display: "MARKDOWN STYLER",
+              discription: "Style your markdown document",
+              to: "https://github.com/poifuture/markdown-styler-for-word",
+            },
+            {
+              display: "GOLINK",
+              discription: "Team wide url shortner",
+              to: "https://github.com/poifuture/golink-gh-pages",
+            },
+          ],
+        },
+        { display: "NEWS", to: "/blogs" },
+        { display: "CONTACT", to: "/contact" },
+      ],
     }
   }
 
@@ -40,86 +87,64 @@ const Navbar = class extends React.Component {
         <aside className="hamburger-menu-box">
           <div className="menu">
             <ul className="navbar-nav">
-              <li className="nav-item">
-                <Link href="/" className="nav-link transition">
-                  HOME
-                </Link>
-              </li>
-              <li className="nav-item">
-                {/* eslint-disable-next-line */}
-                <a className="nav-link">RETAIL</a>
-                <ul>
-                  <li>
-                    {/* eslint-disable-next-line */}
-                    <a>
-                      <span style={{ textDecoration: "line-through" }}>
-                        AINCRAD
-                      </span>
-                    </a>
-                  </li>
-                  <li>
-                    {/* eslint-disable-next-line */}
-                    <a>
-                      <span style={{ textDecoration: "line-through" }}>
-                        LAMBENT
-                      </span>
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li className="nav-item">
-                {/* eslint-disable-next-line */}
-                <a className="nav-link">EDUCATION</a>
-                <ul>
-                  <li>
-                    <a
-                      href="https://github.com/poifuture/poigoi"
-                      className="transition"
-                    >
-                      POI GOI
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li className="nav-item">
-                {/* eslint-disable-next-line */}
-                <a className="nav-link">PRODUCTIVITY</a>
-                <ul>
-                  <li>
-                    <a
-                      href="https://github.com/poifuture/markdown-styler-for-word"
-                      className="transition"
-                    >
-                      MARKDOWN STYLER
-                    </a>
-                  </li>
-                  <li style={{ display: "none" }}>
-                    <a href="works-nonspaced-grid.html" className="transition">
-                      NONSPACED GRID
-                    </a>
-                  </li>
-                  <li style={{ display: "none" }}>
-                    <a href="works-masonry-grid.html" className="transition">
-                      MASONRY GRID
-                    </a>
-                  </li>
-                  <li style={{ display: "none" }}>
-                    <a href="works-retro-grid.html" className="transition">
-                      RETRO GRID
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li className="nav-item">
-                <Link to="/blog" className="nav-link transition">
-                  NEWS
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/contact" className="nav-link transition">
-                  CONTACT
-                </Link>
-              </li>
+              {this.state.links.map(toplevel => (
+                <li key={toplevel.display} className="nav-item">
+                  {typeof toplevel.to === "string" ? (
+                    toplevel.to.startsWith("http") ? (
+                      <a
+                        href={toplevel.to}
+                        className="nav-link"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        {toplevel.display}
+                      </a>
+                    ) : (
+                      <Link to={toplevel.to} className="nav-link transition">
+                        {toplevel.display}
+                      </Link>
+                    )
+                  ) : (
+                    [
+                      /* eslint-disable-next-line */
+                      <a key="memu" className="nav-link">
+                        {toplevel.display}
+                      </a>,
+                      <ul key="items">
+                        {toplevel.to.map(sublevel => (
+                          <li key={sublevel.display}>
+                            {sublevel.to.startsWith("http") ? (
+                              <a
+                                href={sublevel.to}
+                                rel="noopener noreferrer"
+                                target="_blank"
+                              >
+                                <span
+                                  {...(sublevel.isEnabled === false && {
+                                    style: { textDecoration: "line-through" },
+                                  })}
+                                >
+                                  {sublevel.display}
+                                </span>
+                              </a>
+                            ) : (
+                              <Link to={sublevel.to} className="transition">
+                                <span
+                                  {...(sublevel.isEnabled === false && {
+                                    style: { textDecoration: "line-through" },
+                                  })}
+                                >
+                                  {sublevel.display}
+                                </span>
+                              </Link>
+                            )}
+                          </li>
+                        ))}
+                      </ul>,
+                    ]
+                  )}
+                </li>
+              ))}
             </ul>
             {/* <!-- end navbar-nav -->  */}
           </div>
@@ -145,8 +170,9 @@ const Navbar = class extends React.Component {
               {/* <!--end swiper-pagination -->  */}
             </div>
             {/* <!--end swiper-slider --> */}
-            <p className="lead">Are you a Chūnibyō patient?</p>
-            <a href="/" className="ghost-btn">
+            <p className="lead">Are you a Chūnibyō?</p>
+            {/* eslint-disable-next-line */}
+            <a className="ghost-btn">
               <svg>
                 <defs>
                   <linearGradient>
@@ -186,7 +212,7 @@ const Navbar = class extends React.Component {
         {/* <!--end search-box --> */}
 
         <header className="header">
-          <SnowParticles className="particles-bg" />
+          <SnowParticles />
           {/* <!-- end particles-bg --> */}
           <nav className="navbar">
             <div className="logo">
@@ -216,86 +242,62 @@ const Navbar = class extends React.Component {
               DRIBBBLE
             </a>
             <ul className="navbar-nav">
-              <li className="nav-item">
-                <Link to="/" className="nav-link transition">
-                  HOME
-                </Link>
-              </li>
-              <li className="nav-item">
-                {/* eslint-disable-next-line */}
-                <a className="nav-link">RETAIL</a>
-                <ul>
-                  <li>
-                    {/* eslint-disable-next-line */}
-                    <a>
-                      <span style={{ textDecoration: "line-through" }}>
-                        AINCRAD
-                      </span>
-                    </a>
-                  </li>
-                  <li>
-                    {/* eslint-disable-next-line */}
-                    <a>
-                      <span style={{ textDecoration: "line-through" }}>
-                        LAMBENT
-                      </span>
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li className="nav-item">
-                {/* eslint-disable-next-line */}
-                <a className="nav-link">EDUCATION</a>
-                <ul>
-                  <li>
-                    <a
-                      href="https://github.com/poifuture/poigoi"
-                      className="transition"
-                    >
-                      POI GOI
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li className="nav-item">
-                {/* eslint-disable-next-line */}
-                <a className="nav-link">PRODUCTIVITY</a>
-                <ul>
-                  <li>
-                    <a
-                      href="https://github.com/poifuture/markdown-styler-for-word"
-                      className="transition"
-                    >
-                      MARKDOWN STYLER
-                    </a>
-                  </li>
-                  <li style={{ display: "none" }}>
-                    <a href="works-nonspaced-grid.html" className="transition">
-                      NONSPACED GRID
-                    </a>
-                  </li>
-                  <li style={{ display: "none" }}>
-                    <a href="works-masonry-grid.html" className="transition">
-                      MASONRY GRID
-                    </a>
-                  </li>
-                  <li style={{ display: "none" }}>
-                    <a href="works-retro-grid.html" className="transition">
-                      RETRO GRID
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li className="nav-item">
-                <Link to="/blog" className="nav-link transition">
-                  NEWS
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/contact" className="nav-link transition">
-                  CONTACT
-                </Link>
-              </li>
+              {this.state.links.map(toplevel => (
+                <li className="nav-item">
+                  {typeof toplevel.to === "string" ? (
+                    toplevel.to.startsWith("http") ? (
+                      <a
+                        href={toplevel.to}
+                        className="nav-link"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        {toplevel.display}
+                      </a>
+                    ) : (
+                      <Link to={toplevel.to} className="nav-link transition">
+                        {toplevel.display}
+                      </Link>
+                    )
+                  ) : (
+                    [
+                      /* eslint-disable-next-line */
+                      <a className="nav-link">{toplevel.display}</a>,
+                      <ul>
+                        {toplevel.to.map(sublevel => (
+                          <li>
+                            {sublevel.to.startsWith("http") ? (
+                              <a
+                                href={sublevel.to}
+                                rel="noopener noreferrer"
+                                target="_blank"
+                              >
+                                <span
+                                  {...(sublevel.isEnabled === false && {
+                                    style: { textDecoration: "line-through" },
+                                  })}
+                                >
+                                  {sublevel.display}
+                                </span>
+                              </a>
+                            ) : (
+                              <Link to={sublevel.to} className="transition">
+                                <span
+                                  {...(sublevel.isEnabled === false && {
+                                    style: { textDecoration: "line-through" },
+                                  })}
+                                >
+                                  {sublevel.display}
+                                </span>
+                              </Link>
+                            )}
+                          </li>
+                        ))}
+                      </ul>,
+                    ]
+                  )}
+                </li>
+              ))}
             </ul>
             {/* <!-- end navbar-nav -->  */}
           </nav>

@@ -1,4 +1,11 @@
 ;(function($) {
+  var getScrollTop = function() {
+    return Math.max(
+      window.pageYOffset,
+      document.documentElement.scrollTop,
+      document.body.scrollTop
+    )
+  }
   $(document).ready(function() {
     "use strict"
 
@@ -127,7 +134,7 @@
 
     // STICKY NAVBAR
     $(window).on("scroll touchmove", function(e) {
-      $(".navbar").toggleClass("stick-me", $(document).scrollTop() > 1)
+      $(".navbar").toggleClass("stick-me", getScrollTop() > 1)
     })
 
     // SWIPER SLIDER

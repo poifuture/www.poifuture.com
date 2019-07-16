@@ -606,8 +606,8 @@ export const IndexPageTemplate = ({
           <div className="col-12">
             <h4>Join us?</h4>
             <p>
-              If you are also a Chūnibyō patient and hope to change the world
-              with us, please reach out at xxx@xxx.com
+              If you are also a Chūnibyō and hope to change the world with us,
+              please reach out at contact@poifuture.com
             </p>
             <a href="/" className="ghost-btn">
               <svg>

@@ -2,8 +2,35 @@ import React from "react"
 import { Link } from "gatsby"
 import SnowParticles from "./SnowParticles"
 
-const Navbar = class extends React.Component {
-  constructor(props) {
+interface NavbarPropsType {
+  hero: {
+    type: "screen" | "helmet" | "none"
+    title: string
+    subtitle: string
+    onClick: (event: React.MouseEvent<HTMLAnchorElement>) => void
+  }
+}
+interface MenuLinkType {
+  display: string
+  description?: string
+  to: MenuLinkType[] | string
+  isEnabled?: boolean
+}
+interface NavbarStateType {
+  active: boolean
+  navBarActiveClass: string
+  links: MenuLinkType[]
+}
+const Navbar = class extends React.Component<NavbarPropsType, NavbarStateType> {
+  static defaultProps = {
+    hero: {
+      type: "none",
+      title: "",
+      subtitle: "",
+      onClick: undefined,
+    },
+  }
+  constructor(props: NavbarPropsType) {
     super(props)
     this.state = {
       active: false,
@@ -15,13 +42,13 @@ const Navbar = class extends React.Component {
           to: [
             {
               display: "AINCRAD",
-              discription: "AR platform",
+              description: "AR platform",
               to: "#",
               isEnabled: false,
             },
             {
               display: "LAMBENT",
-              discription: "AR fitting room",
+              description: "AR fitting room",
               to: "#",
               isEnabled: false,
             },
@@ -32,7 +59,7 @@ const Navbar = class extends React.Component {
           to: [
             {
               display: "GOI",
-              discription: "Recite words",
+              description: "Recite words",
               to: "https://github.com/poifuture/poigoi",
             },
           ],
@@ -42,17 +69,17 @@ const Navbar = class extends React.Component {
           to: [
             {
               display: "MARKDOWN STYLER",
-              discription: "Style your markdown document",
+              description: "Style your markdown document",
               to: "https://github.com/poifuture/markdown-styler-for-word",
             },
             {
               display: "GOLINK",
-              discription: "Team wide url shortner",
+              description: "Team wide url shortner",
               to: "https://github.com/poifuture/golink-gh-pages",
             },
           ],
         },
-        { display: "NEWS", to: "/blog" },
+        { display: "NEWS & BLOGS", to: "/blog" },
         { display: "CONTACT", to: "/contact" },
       ],
     }
@@ -79,6 +106,8 @@ const Navbar = class extends React.Component {
   }
 
   render() {
+    const heroType = this.props.hero.type
+    console.log("type:", heroType)
     return (
       <div>
         {/* begin mobile menu */}
@@ -109,35 +138,43 @@ const Navbar = class extends React.Component {
                         {toplevel.display}
                       </a>,
                       <ul key="items">
-                        {toplevel.to.map(sublevel => (
-                          <li key={sublevel.display}>
-                            {sublevel.to.startsWith("http") ? (
-                              <a
-                                href={sublevel.to}
-                                rel="noopener noreferrer"
-                                target="_blank"
-                              >
-                                <span
-                                  {...(sublevel.isEnabled === false && {
-                                    style: { textDecoration: "line-through" },
+                        {toplevel.to.map(
+                          sublevel =>
+                            typeof sublevel.to === "string" && (
+                              <li key={sublevel.display}>
+                                sublevel.to.startsWith("http") ? (
+                                <a
+                                  href={sublevel.to}
+                                  rel="noopener noreferrer"
+                                  target="_blank"
+                                >
+                                  <span
+                                    {...(sublevel.isEnabled === false && {
+                                      style: { textDecoration: "line-through" },
+                                    })}
+                                  >
+                                    {sublevel.display}
+                                  </span>
+                                </a>
+                                ) : (
+                                <Link
+                                  to={sublevel.to}
+                                  {...(sublevel.isEnabled !== false && {
+                                    className: "transition",
                                   })}
                                 >
-                                  {sublevel.display}
-                                </span>
-                              </a>
-                            ) : (
-                              <Link to={sublevel.to} className="transition">
-                                <span
-                                  {...(sublevel.isEnabled === false && {
-                                    style: { textDecoration: "line-through" },
-                                  })}
-                                >
-                                  {sublevel.display}
-                                </span>
-                              </Link>
-                            )}
-                          </li>
-                        ))}
+                                  <span
+                                    {...(sublevel.isEnabled === false && {
+                                      style: { textDecoration: "line-through" },
+                                    })}
+                                  >
+                                    {sublevel.display}
+                                  </span>
+                                </Link>
+                                )}
+                              </li>
+                            )
+                        )}
                       </ul>,
                     ]
                   )}
@@ -209,7 +246,11 @@ const Navbar = class extends React.Component {
         </div>
         {/* <!--end search-box --> */}
 
-        <header className="header">
+        <header
+          {...(heroType === "screen" && { className: "header" })}
+          {...(heroType === "helmet" && { className: "header int-header" })}
+          {...(heroType === "none" && { className: "header light-header" })}
+        >
           <SnowParticles />
           {/* <!-- end particles-bg --> */}
           <nav className="navbar">
@@ -262,35 +303,47 @@ const Navbar = class extends React.Component {
                       /* eslint-disable-next-line */
                       <a className="nav-link">{toplevel.display}</a>,
                       <ul>
-                        {toplevel.to.map(sublevel => (
-                          <li>
-                            {sublevel.to.startsWith("http") ? (
-                              <a
-                                href={sublevel.to}
-                                rel="noopener noreferrer"
-                                target="_blank"
-                              >
-                                <span
-                                  {...(sublevel.isEnabled === false && {
-                                    style: { textDecoration: "line-through" },
-                                  })}
-                                >
-                                  {sublevel.display}
-                                </span>
-                              </a>
-                            ) : (
-                              <Link to={sublevel.to} className="transition">
-                                <span
-                                  {...(sublevel.isEnabled === false && {
-                                    style: { textDecoration: "line-through" },
-                                  })}
-                                >
-                                  {sublevel.display}
-                                </span>
-                              </Link>
-                            )}
-                          </li>
-                        ))}
+                        {toplevel.to.map(
+                          sublevel =>
+                            typeof sublevel.to === "string" && (
+                              <li>
+                                {sublevel.to.startsWith("http") ? (
+                                  <a
+                                    href={sublevel.to}
+                                    rel="noopener noreferrer"
+                                    target="_blank"
+                                  >
+                                    <span
+                                      {...(sublevel.isEnabled === false && {
+                                        style: {
+                                          textDecoration: "line-through",
+                                        },
+                                      })}
+                                    >
+                                      {sublevel.display}
+                                    </span>
+                                  </a>
+                                ) : (
+                                  <Link
+                                    to={sublevel.to}
+                                    {...(sublevel.isEnabled !== false && {
+                                      className: "transition",
+                                    })}
+                                  >
+                                    <span
+                                      {...(sublevel.isEnabled === false && {
+                                        style: {
+                                          textDecoration: "line-through",
+                                        },
+                                      })}
+                                    >
+                                      {sublevel.display}
+                                    </span>
+                                  </Link>
+                                )}
+                              </li>
+                            )
+                        )}
                       </ul>,
                     ]
                   )}
@@ -327,6 +380,12 @@ const Navbar = class extends React.Component {
                   <span>Discover Now</span>
                 </a>
               )}
+            </div>
+          )}
+          {this.props.hero && this.props.hero.type === "helmet" && (
+            <div className="inner">
+              <h2>{this.props.hero.title}</h2>
+              <h6>{this.props.hero.subtitle}</h6>
             </div>
           )}
           {/* <!-- end inner --> */}

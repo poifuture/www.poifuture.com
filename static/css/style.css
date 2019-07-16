@@ -635,6 +635,7 @@ button[type="submit"] {
   width: 100%;
   left: 0;
   text-align: center;
+  top: 30%;
 }
 .header.int-header .inner h2 {
   font-size: 4em;
@@ -643,6 +644,10 @@ button[type="submit"] {
 .header.int-header .inner h6 {
   color: #fff;
   object-fit: 0.7;
+}
+.header.light-header {
+  width: 100%;
+  height: 100px;
 }
 
 /* NAVBAR */

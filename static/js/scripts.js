@@ -1,4 +1,3 @@
-window.nagiload = true
 ;(function($) {
   $(document).ready(function() {
     "use strict"
@@ -8,122 +7,6 @@ window.nagiload = true
     if (window.matchMedia("(prefers-reduced-motion)").matches) {
       video.removeAttribute("autoplay")
       video.pause()
-    }
-
-    // PARTICLES BG EFFECT
-    var n = document.getElementById("particles-bg")
-    if (n == null) {
-    } else {
-      particlesJS("particles-bg", {
-        particles: {
-          number: {
-            value: 120,
-            density: {
-              enable: true,
-              value_area: 800,
-            },
-          },
-          color: {
-            value: "#ffffff",
-          },
-          shape: {
-            type: "circle",
-            stroke: {
-              width: 0,
-              color: "#000000",
-            },
-            polygon: {
-              nb_sides: 5,
-            },
-            image: {
-              src: "img/github.svg",
-              width: 100,
-              height: 100,
-            },
-          },
-          opacity: {
-            value: 0.5,
-            random: false,
-            anim: {
-              enable: false,
-              speed: 1,
-              opacity_min: 0.1,
-              sync: false,
-            },
-          },
-          size: {
-            value: 3,
-            random: true,
-            anim: {
-              enable: false,
-              speed: 40,
-              size_min: 0.1,
-              sync: false,
-            },
-          },
-          line_linked: {
-            enable: false,
-            distance: 150,
-            color: "#ffffff",
-            opacity: 0.4,
-            width: 1,
-          },
-          move: {
-            enable: true,
-            speed: 6,
-            direction: "bottom",
-            random: false,
-            straight: false,
-            out_mode: "out",
-            bounce: false,
-            attract: {
-              enable: false,
-              rotateX: 600,
-              rotateY: 1200,
-            },
-          },
-        },
-        interactivity: {
-          detect_on: "window",
-          events: {
-            onhover: {
-              enable: true,
-              mode: "repulse",
-            },
-            onclick: {
-              enable: true,
-              mode: "push",
-            },
-            resize: true,
-          },
-          modes: {
-            grab: {
-              distance: 140,
-              line_linked: {
-                opacity: 1,
-              },
-            },
-            bubble: {
-              distance: 400,
-              size: 40,
-              duration: 2,
-              opacity: 8,
-              speed: 3,
-            },
-            repulse: {
-              distance: 200,
-              duration: 0.4,
-            },
-            push: {
-              particles_nb: 4,
-            },
-            remove: {
-              particles_nb: 2,
-            },
-          },
-        },
-        retina_detect: true,
-      })
     }
 
     // READMORE JS
@@ -292,41 +175,41 @@ window.nagiload = true
     })
 
     // WORKS GRID
-    // $(window).load(function(e) {
-    $(".works-grid").isotope({
-      itemSelector: ".works-grid li",
-      percentPosition: true,
+    $(window).load(function(e) {
+      $(".works-grid").isotope({
+        itemSelector: ".works-grid li",
+        percentPosition: true,
+      })
     })
-    // })
 
     // WORKS FILTER
-    // $(window).load(function(e) {
-    var $container = $(".works-grid")
-    $container.isotope({
-      filter: "*",
-      animationOptions: {
-        duration: 750,
-        easing: "linear",
-        queue: false,
-      },
-    })
-
-    $(".works-filter a").click(function(e) {
-      $(".works-filter .current").removeClass("current")
-      $(this).addClass("current")
-
-      var selector = $(this).attr("data-filter")
+    $(window).load(function(e) {
+      var $container = $(".works-grid")
       $container.isotope({
-        filter: selector,
+        filter: "*",
         animationOptions: {
           duration: 750,
           easing: "linear",
           queue: false,
         },
       })
-      return false
+
+      $(".works-filter a").click(function(e) {
+        $(".works-filter .current").removeClass("current")
+        $(this).addClass("current")
+
+        var selector = $(this).attr("data-filter")
+        $container.isotope({
+          filter: selector,
+          animationOptions: {
+            duration: 750,
+            easing: "linear",
+            queue: false,
+          },
+        })
+        return false
+      })
     })
-    // })
   })
 
   // ODOMETER
@@ -334,6 +217,14 @@ window.nagiload = true
     $(".odometer").each(function(i) {
       var bottom_of_object = $(this).offset().top + $(this).outerHeight()
       var bottom_of_window = $(window).scrollTop() + $(window).height()
+
+      /* If the object is completely visible in the window, fade it in */
+      if (bottom_of_window > bottom_of_object) {
+        $("#1").html("11")
+        $("#2").html("870")
+        $("#3").html("252")
+        $("#4").html("99")
+      }
     })
   })
 

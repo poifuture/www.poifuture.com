@@ -40,12 +40,12 @@ const TemplateWrapper = ({ children, hero }) => {
 
         {/* CSS FILES */}
         {/* TODO: Move to native react */}
-        <link rel="stylesheet" href="css/odometer.min.css" />
-        <link rel="stylesheet" href="css/fancybox.min.css" />
-        <link rel="stylesheet" href="css/swiper.min.css" />
-        <link rel="stylesheet" href="css/isolayer.css" />
-        <link rel="stylesheet" href="css/bootstrap.min.css" />
-        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="/css/odometer.min.css" />
+        <link rel="stylesheet" href="/css/fancybox.min.css" />
+        <link rel="stylesheet" href="/css/swiper.min.css" />
+        <link rel="stylesheet" href="/css/isolayer.css" />
+        <link rel="stylesheet" href="/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="/css/style.css" />
 
         {/* end Coddle Template */}
         <meta name="theme-color" content="#99ccff" />

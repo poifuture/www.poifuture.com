@@ -11,32 +11,32 @@ const loadScript = async src => {
   })
 }
 const loadAllScripts = async () => {
-  await loadScript("js/modernizr.custom.js")
-  await loadScript("js/jquery.min.js")
+  await loadScript("/js/modernizr.custom.js")
+  await loadScript("/js/jquery.min.js")
   await Promise.all([
-    loadScript("js/popper.min.js"),
-    loadScript("js/bootstrap.min.js"),
-    loadScript("js/isotope.js"),
-    loadScript("js/imagesloaded.pkgd.min.js"),
-    loadScript("js/dynamics.min.js"),
-    loadScript("js/classie.js"),
-    loadScript("js/isolayer.js"),
-    loadScript("js/fancybox.min.js"),
-    loadScript("js/swiper.min.js"),
-    loadScript("js/perspective.js"),
-    loadScript("js/anime.min.js"),
-    loadScript("js/wow.min.js"),
-    loadScript("js/odometer.min.js"),
-    loadScript("js/readmore.min.js"),
-    loadScript("js/particles.min.js"),
+    loadScript("/js/popper.min.js"),
+    loadScript("/js/bootstrap.min.js"),
+    loadScript("/js/isotope.js"),
+    loadScript("/js/imagesloaded.pkgd.min.js"),
+    loadScript("/js/dynamics.min.js"),
+    loadScript("/js/classie.js"),
+    loadScript("/js/isolayer.js"),
+    loadScript("/js/fancybox.min.js"),
+    loadScript("/js/swiper.min.js"),
+    loadScript("/js/perspective.js"),
+    loadScript("/js/anime.min.js"),
+    loadScript("/js/wow.min.js"),
+    loadScript("/js/odometer.min.js"),
+    loadScript("/js/readmore.min.js"),
   ])
-  await loadScript("js/scripts.js")
+  await loadScript("/js/scripts.js")
 }
 
 exports.onInitialClientRender = () => {
   console.log("ReactDOM.render has executed")
   loadAllScripts()
     .then(() => {
+      window.dispatchEvent(new Event("resize"))
       document.getElementsByTagName("body")[0].className += " page-loaded"
       console.log("load all done")
     })

@@ -1,0 +1,14 @@
+{
+  "version": "1.0",
+  "name": "poifuture-homepage",
+  "description": null,
+  "icons": {
+    "60": "/icons-0efc2a2656baaf837e0a85ec36ac0503/firefox_app_60x60.png",
+    "128": "/icons-0efc2a2656baaf837e0a85ec36ac0503/firefox_app_128x128.png",
+    "512": "/icons-0efc2a2656baaf837e0a85ec36ac0503/firefox_app_512x512.png"
+  },
+  "developer": {
+    "name": null,
+    "url": null
+  }
+}
